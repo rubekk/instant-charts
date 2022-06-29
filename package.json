@@ -22,6 +22,7 @@
   },
   "type": "module",
   "dependencies": {
-    "chart.js": "^2.6.0"
+    "chart.js": "^2.6.0",
+    "jspdf": "^2.5.1"
   }
 }

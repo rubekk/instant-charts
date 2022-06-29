@@ -2,6 +2,7 @@
     import './style.css';
     import chartjs from 'chart.js';
     import { onMount } from 'svelte';
+    import { downloadData } from './../../lib/store.js';
 
     let chart,
         ctx,
@@ -12,6 +13,9 @@
         openColors=false,
         openLegends=false,
         openTitle=false,
+        openDownload=false,
+        downloadAs='',
+        download=false,
         data=[
             {
                 chartType: 'doughnut',
@@ -35,7 +39,8 @@
                 legendPosition: 'center',
                 showLegend: true,
                 showTooltip: true,
-                showValues: true
+                showValues: true,
+                download: true
             }
         ];
 
@@ -48,7 +53,7 @@
         if(chart) chart.destroy();
 
         if(data[currChartIndex].chartType=='pie' || data[currChartIndex].chartType=='doughnut'){
-            data[currChartIndex].showLegend=true;
+            // data[currChartIndex].showLegend=true;
             chart=new chartjs(ctx, {
                 type: data[currChartIndex].chartType,
                 data: {
@@ -76,7 +81,7 @@
             });
         }
         else if(data[currChartIndex].chartType=='bar' || data[currChartIndex].chartType=='horizontalBar'){
-            data[currChartIndex].showLegend=true;
+            // data[currChartIndex].showLegend=true;
             chart=new chartjs(ctx, {
                 type: data[currChartIndex].chartType,
                 data: {
@@ -192,7 +197,8 @@
             legendPosition: 'left',
             showLegend: true,
             showTooltip: true,
-            showValues: true
+            showValues: true,
+            download: true
         });
         currChartIndex=data.length-1;
         handleSelect(data[currChartIndex].chartType);
@@ -203,7 +209,6 @@
             data.splice(i,1);
             data=[...data];
             currChartIndex=0;
-
             handleSelect(data[currChartIndex].chartType)
         }
     }
@@ -282,6 +287,15 @@
         chart.update();
     }
 
+    const handleDownload=(downloadType)=>{
+        downloadAs=downloadType;
+        download=true;
+
+        setTimeout(()=>{
+            download=false
+        },2500)
+    }
+
     const createColor=()=>{
         const possibilities="abcdef0123456789";
 
@@ -294,6 +308,8 @@
         data[currChartIndex].labelsArr.forEach((label,i)=>{
             if(!data[currChartIndex].colors[i]) data[currChartIndex].colors[i]=createColor();
         })
+
+        downloadData.set(data);
     }
 </script>
 
@@ -445,7 +461,7 @@
 
     <!-- colors section -->
     <div class="colors-sec">
-        <div style={openColors?'border-bottom: 1px solid #000':''} on:click={()=>openColors=!openColors} class="color-text">
+        <div style={openColors?'border-bottom: 2px solid #000':''} on:click={()=>openColors=!openColors} class="color-text">
             <div class="text">Colors</div>
             <div class="icon">
                 <i class={openColors?'fa-solid fa-chevron-up':'fa-solid fa-chevron-down'}></i>
@@ -478,7 +494,7 @@
     <!-- legend settings section -->
     {#if data[currChartIndex].showLegend}
         <div class="legend-settings-sec">
-            <div style={openLegends?'border-bottom: 1px solid #000':''} on:click={()=>openLegends=!openLegends} class="legend-text">
+            <div style={openLegends?'border-bottom: 2px solid #000':''} on:click={()=>openLegends=!openLegends} class="legend-text">
                 <div class="text">Legend</div>
                 <div class="icon">
                     <i class={openLegends?'fa-solid fa-chevron-up':'fa-solid fa-chevron-down'}></i>

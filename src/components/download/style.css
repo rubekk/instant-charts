@@ -1,0 +1,72 @@
+.download-elem{
+    display: none;
+}
+h1{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.canvas-sec{
+    width: 800px;
+    margin: auto;
+}
+canvas{
+    width: 100%;
+}
+.legend-sec{
+    width: max-content;
+    padding: .75rem 1rem;
+    box-sizing: content-box;
+}
+.legend-sec ul li{
+    display: flex;
+    align-items: center;
+}
+.legend-label-color{
+    width: 15px;
+    height: 15px;
+    margin-right: .5rem;
+    border-radius: 50%;
+}
+.legend-sec-horizontal{
+    margin-top: 3rem;
+}
+.legend-sec-horizontal ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.legend-sec-horizontal ul li{
+    display: flex;
+    align-items: center;
+    margin: .5rem 1rem;
+}
+.download-sec{
+    border-radius: 3px;
+}
+.download-sec .upper{
+    width: max-content;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+}
+.download-sec .upper span{
+    cursor: pointer;
+    margin-right: .5rem;
+}
+.download-btn{
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-left: 2px dotted #797979;
+    cursor: pointer;
+}
+.lower input{
+    width: 20px;
+    height: 20px;
+    margin-right: 2rem;
+}
+.lower div{
+    padding: .25rem .5rem;
+    display: flex;
+    align-items: center;
+}

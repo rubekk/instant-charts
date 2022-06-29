@@ -3,7 +3,7 @@
 <div class="footer">
 	<p>Created by Rubek</p>
 	<a class="middle" href="./privacy">Privacy</a>
-	<a href="https://docs.google.com/forms/d/e/1FAIpQLScAhOxboEoc5j-5Vph7RyzgZ0f2GdreJ7yoc_PFTjGjwThrdQ/viewform?usp=sf_link" target="_blank">Feedback</a>
+	<a href="https://docs.google.com/forms/d/e/1FAIpQLSeGk11H09BUuq0U5F1KY6D6a6anDfA7xy9ke6ZM5KeBCbyl9g/viewform?usp=sf_link" target="_blank">Feedback</a>
 </div>
 
 <style type="text/css">

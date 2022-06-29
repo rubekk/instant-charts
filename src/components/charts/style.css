@@ -98,7 +98,7 @@ input{
     border: 1px solid #000;
     outline: none;
 }
-.input-sec input, .selected, .color-text, .legend-text{ 
+.input-sec input, .selected, .color-text, .legend-text, .download-text{ 
     background: #f0f0f0;
 }
 .horizontal-line{
@@ -124,7 +124,7 @@ input{
     border: 1px solid #000;
     cursor: pointer;
 }
-.select-sec .icon, .color-text .icon, .legend-text .icon{
+.select-sec .icon, .color-text .icon, .legend-text .icon, .download-text .icon{
     padding: .5rem 1rem;
     border-left: 1px solid #000;
 }
@@ -217,11 +217,11 @@ input[type="range"]{
 }
 
 /* color section */
-.colors-sec, .legend-settings-sec{
+.colors-sec, .legend-settings-sec, .download-sec{
     margin-top: 1rem;
     border: 1px solid #000;
 }
-.color-text, .legend-text{
+.color-text, .legend-text, .download-text{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -279,6 +279,34 @@ input[type="range"]{
     width: 95%;
     margin: .25rem auto;
     background-color: #797979;
+}
+.download-sec button{
+    padding: .5rem .75rem;
+    cursor: pointer;
+}
+.download-sec button span{
+    margin-right: 1rem;
+}
+.download-popup{
+    padding: .5rem 0;
+    background: #e8e8e8;
+}
+.checkbox-title{
+    display: flex;
+    align-items: center;
+    margin: 0 .5rem;
+}
+.checkbox-title input{
+    width: 20px;
+    height: 20px;
+    margin-right: 2rem;
+}
+.download-div{
+    margin: .5rem;
+    cursor: pointer;
+}
+.download-div:last-child{
+    margin-bottom: 0;
 }
 
 /* input type=checkbox */

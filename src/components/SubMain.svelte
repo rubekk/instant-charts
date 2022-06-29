@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	const shareLink = "todopomo.netlify.app";
+	const shareLink = "instantcharts.netlify.app";
 	const fbShareLink = `https://www.facebook.com/sharer/sharer.php?u=${shareLink}`; 
 	const twitterShareLink = `http://twitter.com/share?&url=${shareLink}`;
 	const redditShareLink = `https://www.reddit.com/submit?url=${shareLink}`;
